@@ -117,7 +117,7 @@ mac:
 
 RELEASENAME=$(BINARYNAME)-$(REL)
 GIT_HOST=github.com
-REPOPATH=https://github.com/HMS-Analytical-Software/czemmel-goGitAlchemist
+REPOPATH=https://github.com/HMS-Analytical-Software/goGitAlchemist
 
 release:
 ifeq ($(strip $(REL)),)
