@@ -42,12 +42,14 @@ The acceptance tests:
 
 The acceptance tests be called like this:
 
-* make acctest TASK=cmd\_mv: run cmd\_mv test (default TASK is basic\_workflow)
-* make acctestvh TASK=cmd\_mv: run one test in verbose mode
+* make acctest: run basic\_workflow test (default)
+* make acctest TASK=cmd\_mv: run cmd\_mv test
+* make acctestv TASK=cmd\_mv: run cmd\mv test in verbose mode
 * make acctestall: run all test tasks
 * make acctestallv: run all test tasks in verbose mode
 * make acctestrunall: run with runall flag
 * make acctestrunallv: run with runall flag in verbose mode
+
 
 The test configuration files are provided in the testdata directory.
 
@@ -91,7 +93,22 @@ Example: run test for default TASK "basic\_workflow" in verbose mode:
 # acceptance tests in github
 
 You can execute the acceptance tests on github by calling the action
+**gitalchemist-acceptance-tests**
 directly from the GitHub web site or by using the gh cli.
+
+## Github
+
+Select 
+    Actions > gitalchemist-acceptance-tests > Run workflow
+and select the operating system to use:
+
+* all (default)
+* linux
+* windows
+* darwin (MacOSX)
+
+
+## gh cli
 
 * make acctestworkflow: executes "make acctestallv" in a github runner using the current branch and Liunx
 * make acctestworkflow TESTOS=windows: run acceptance tests for windows
