@@ -83,46 +83,6 @@ The exit code of the program is determined by the kind of error that happened:
 * 42: other
 
 
-# python GitAlchemist
-
-This repository contains an implementation of 
-[GitAlchemist](https://github.com/HMS-Analytical-Software/GitAlchemist)
-in go.
-
-Go GitAlchemist compiles to binaries, so it does not need a python installation 
-at run time.
-
-Go GitAlchemist tries to be compatible with GitAlchemist by using
-the same gitalchemist.yaml file format that defines
-a 'formula' for git alchemistry. A valid GitAlchemist file should
-be usable with go GitAlchemist without changes.
-
-The internal code structure, the log output and the command line parameters 
-however are different.
-
-There are three major differences:
-
-## git commands
-
-Go GitAlchemist does not allow execution of arbitrary commands.
-When using the 'git' command definition, the operating system
-specific executable ('git' or 'git.exe') is executed.
-
-To be backwards compatible, it allows that the command defined in the 
-gitalchemist.yaml file starts with 'git' (or 'git.exe'). This first
-argument is removed during processing.
-
-## timestamp directory
-
-Go GitAlchemist does not use a timestamp directory. Each created git repo
-is placed within the target directory, by default "./cwd", in a directory
-that corresponds to the Title definition in the gitalchemist file.
-
-This implies that the created directories must be cleaned up befor a rerun.
-It avoids cluttering the directory space.
-
-To remove all temporary created git repos, use the -clean command line switch.
-
 ## features
 
 Currently, the following commands are supported:
@@ -264,4 +224,44 @@ provided as GitHub releases.
 # Development
 
 see [DEVELOP.md](DEVELOP.md)
+
+# python GitAlchemist
+
+This repository contains an implementation of 
+[GitAlchemist](https://github.com/HMS-Analytical-Software/GitAlchemist)
+in go.
+
+Go GitAlchemist compiles to binaries, so it does not need a python installation 
+at run time.
+
+Go GitAlchemist tries to be compatible with GitAlchemist by using
+the same gitalchemist.yaml file format that defines
+a 'formula' for git alchemistry. A valid GitAlchemist file should
+be usable with go GitAlchemist without changes.
+
+The internal code structure, the log output and the command line parameters 
+however are different.
+
+There are three major differences:
+
+## git commands
+
+Go GitAlchemist does not allow execution of arbitrary commands.
+When using the 'git' command definition, the operating system
+specific executable ('git' or 'git.exe') is executed.
+
+To be backwards compatible, it allows that the command defined in the 
+gitalchemist.yaml file starts with 'git' (or 'git.exe'). This first
+argument is removed during processing.
+
+## timestamp directory
+
+Go GitAlchemist does not use a timestamp directory. Each created git repo
+is placed within the target directory, by default "./cwd", in a directory
+that corresponds to the Title definition in the gitalchemist file.
+
+This implies that the created directories must be cleaned up befor a rerun.
+It avoids cluttering the directory space.
+
+To remove all temporary created git repos, use the -clean command line switch.
 
