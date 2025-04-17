@@ -161,12 +161,10 @@ The mortalLogger records the spells so humble mortals can admire what happened.
 It provides infos in default mode and debug messages in verbose mode.
 
 
-# check.ErrorString
+# check.Error and check.ErrorString
 
-Function "ErrorString" in package "check" is a test helper function that allows simple
-error checking using the retrieved error and the wanted (expected) error message. 
-If the wanted error message is the empty string, it is expected that
-the error is nil.
+The Functions "Error" and "ErrorString" in package "check" are test helper function 
+that allow simple error checking.
 
 It skips the rest of the test function if an error is wanted.
 

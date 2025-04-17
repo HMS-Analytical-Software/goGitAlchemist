@@ -115,7 +115,7 @@ and select the operating system to use:
 * make acctestworkflow TESTOS=darwin: run acceptance tests for macosx (aka darwin)
 * make acctestworkflow TESTOS=all: run acceptance tests for linux, windows, and darwin
 
-Thie make call requires prior authentication of the gh client.
+This make call requires prior authentication of the gh client.
 
 Example:
 
