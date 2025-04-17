@@ -1,0 +1,7 @@
+title: test_workflow
+commands:
+  - init_bare_repo:
+      bare: remotes/create_add_commit
+      clone_to: workflow
+      clone_to: workflow
+

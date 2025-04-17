@@ -1,0 +1,26 @@
+
+# vim swap files
+*.swp
+
+# test coverage result files
+cover.txt
+cover.html
+
+# temporary binaries
+cmd/gitalchemist/gitalchemist*
+
+# temporary test files
+cmd/gitalchemist/cwd
+
+pkg/alchemist/testdata/target.txt
+pkg/alchemist/testdata/move.txt
+pkg/alchemist/testdata/page1/source.txt
+pkg/alchemist/testdata/new_page
+pkg/alchemist/testdata/existing_page
+
+# vscode files
+.vscode/
+
+# log files
+*.log
+

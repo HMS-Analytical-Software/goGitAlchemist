@@ -1,0 +1,7 @@
+<title>test_workflow</title>
+<commands>
+<init_bare_repo>
+<bare> remotes/create_add_commit </bare> 
+<clone_to> workflow </clone_to>
+</init_bare_repo>
+</commands>

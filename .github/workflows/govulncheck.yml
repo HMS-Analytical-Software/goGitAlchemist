@@ -1,0 +1,28 @@
+# This workflow runs the go vulnerability tests.
+
+name: govulncheck
+
+on: 
+  workflow_dispatch:
+  push:
+    paths:
+     - '**.go'
+
+jobs:
+  govulncheck-test:
+    name: execute go vulnerability check
+    runs-on: [ ubuntu-latest ] 
+
+    steps:
+
+    - name:  Checkout repository code
+      uses: actions/checkout@v4
+
+    - id: govulncheck
+      uses: golang/govulncheck-action@v1
+      with:
+        go-version-input: 1.24
+        check-latest: true
+        go-package: ./...
+
+

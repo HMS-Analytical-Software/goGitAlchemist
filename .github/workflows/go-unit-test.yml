@@ -1,0 +1,33 @@
+# This workflow runs the go unit tests.
+
+name: go-unit-test
+on: 
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.go'
+
+jobs:
+  unit-tests:
+    name: run unit tests
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }} 
+
+    steps:
+
+    - name:  Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+        check-latest: true
+
+    - name: Test
+      run: go test ./...
+
+

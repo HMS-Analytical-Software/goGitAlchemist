@@ -1,0 +1,59 @@
+# ------------------------------------------------------------
+# configuration file for golangci-lint
+# (go static code analyzer tool)
+# doc: https://golangci-lint.run/usage/linters/
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# global configuration
+issues:
+  # no limit of output, show all results
+  # Default: 3
+  max-same-issues: 0
+
+  # ignore some error messages
+  exclude:
+    # errcheck exclude-functions not working
+    - "Error return value of `a.novice..*` is not checked"
+    - "Error return value of `n.makedir` is not checked"
+    # unused seems to struggle with the build tags
+    - "const `gitAlchemistCmd` is unused"
+    - "const `goCmd` is unused"
+    - "const `gitCmd` is unused"
+
+
+# ------------------------------------------------------------
+# define output
+
+output:
+  formats: "colored-line-number"
+
+
+# ------------------------------------------------------------
+# used linters
+
+linters:
+  enable:
+    
+    # --- Default linters  ---
+    - errcheck # Detect unchecked errors
+    - gosimple # Suggest code simplifications
+    - govet # Reports suspicious constructs
+    - ineffassign # Detects unused variable assignments
+    - staticcheck # go vet on steroids
+    - unused # Detect unused constants, variables, functions and types
+
+
+# ------------------------------------------------------------
+# configure some linters
+
+linters-settings:
+
+#   errcheck:
+#     exclude-functions:
+#       - (pkg/alchemist.novice).makedir
+#       - (pkg/alchemist.novice).copy
+#       - (pkg/alchemist.novice).move
+#       - (pkg/alchemist.novice).git
+
+

@@ -1,0 +1,27 @@
+title: cmd_create_add_commit
+commands:
+  - init_bare_repo:
+      bare: remotes/cmd_create_add_commit
+      clone_to: cmd_create_add_commit
+  - create_add_commit:
+      files:
+        - files/project_plan_v1.md => project_plan.md
+      message: added project plan template
+      author: red
+  - create_add_commit:
+      files:
+        - files/project_plan_v2.md => project_plan.md
+      message: added project summary
+      author: red
+  - create_add_commit:
+      files:
+        - files/project_plan_v3.md => project_plan.md
+      message: removed unnecessary parts of the project plan
+      author: red
+  - create_add_commit:
+      files:
+        - files/folder1 => folder1/
+      message: added folder1
+      author: red
+  - git:
+      command: "git push origin main"

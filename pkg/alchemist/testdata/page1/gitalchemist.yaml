@@ -1,0 +1,5 @@
+title: page1
+commands:
+  - init_bare_repo:
+      bare: remotes/page1remote
+      clone_to: page1

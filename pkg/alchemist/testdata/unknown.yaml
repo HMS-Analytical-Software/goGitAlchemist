@@ -1,0 +1,8 @@
+title: test_workflow
+commands:
+  - init_bare_repo:
+      bare: remotes/create_add_commit
+      clone_to: workflow
+  - not_known:
+      source: files/project_plan_v1.md
+      target: project_plan.md

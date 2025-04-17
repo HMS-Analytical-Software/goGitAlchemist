@@ -1,0 +1,5 @@
+title: test_workflow
+commands:
+  - init_bare_repo:
+    clone_to: workflow
+

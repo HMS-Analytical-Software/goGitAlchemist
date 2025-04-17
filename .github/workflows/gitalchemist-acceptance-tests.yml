@@ -1,0 +1,86 @@
+# This workflow will run gitalchemist acceptance tests.
+
+name: gitalchemist-acceptance-tests
+on: 
+  workflow_dispatch:
+    inputs:
+      os:
+        description: "os to test"
+        type: choice
+        required: true
+        options:
+          - all
+          - linux
+          - windows
+          - darwin
+
+jobs:
+
+  run-acceptance-tests-linux:
+    if: github.event.inputs.os == 'linux' || github.event.inputs.os == 'all'  
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name:  Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+        check-latest: true
+
+    - name: Run acceptance tests
+      shell: bash
+      run: |
+        set -x
+        cd cmd/gitalchemist
+        make acctestallv
+
+  run-acceptance-tests-windows:
+    if: github.event.inputs.os == 'windows' || github.event.inputs.os == 'all'  
+    runs-on: windows-latest
+
+    steps:
+
+    - name:  Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+        check-latest: true
+
+    - name: Run acceptance tests
+      shell: bash
+      run: |
+        set -x
+        cd cmd/gitalchemist
+        make acctestallv
+
+
+  run-acceptance-tests-darwin:
+    if: github.event.inputs.os == 'darwin' || github.event.inputs.os == 'all'  
+    runs-on: darwin-latest
+
+    steps:
+
+    - name:  Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+        check-latest: true
+
+    - name: Run acceptance tests
+      shell: bash
+      run: |
+        set -x
+        cd cmd/gitalchemist
+        make acctestallv
+
+

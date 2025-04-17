@@ -1,0 +1,52 @@
+title: test_workflow
+commands:
+  - init_bare_repo:
+      bare: remotes/create_add_commit
+      clone_to: workflow
+  - create_file:
+      source: files/project_plan_v1.md
+      target: project_plan.md
+  - add:
+      files: 
+      - project_plan.md
+  - commit:
+      message: Added first file
+      author: red
+  - create_add_commit:
+      files:
+      - files/project_plan_v3.md => project_plan.md
+      message: removed unnecessary parts of the project plan
+      author: red
+  - create_add_commit:
+      files:
+      - files/folder1 => folder1/
+      message: added folder1
+      author: red
+  - git:
+      command: "git commit -m \"my message\""
+  - git:
+      command: "push origin main"
+  - merge:
+      source: feature/start_project
+      target: main
+      delete_source: false
+  - merge:
+      source: feature/other
+      target: main
+      delete_source: true
+  - push:
+      main: true
+  - mv:
+      source: main.py
+      target: generator.py
+  - remove_and_commit:
+      files:
+      - notes-timeline.txt
+      message: clean up timeline notes
+      author: red
+  - remove_and_commit:
+      files:
+      - notes-timeline_nonexistent.txt
+      message: clean up timeline notes that don't exist (this step should fail)
+      author: red
+
