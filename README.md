@@ -242,7 +242,7 @@ be usable with go GitAlchemist without changes.
 The internal code structure, the log output and the command line parameters 
 however are different.
 
-There are three major differences:
+There are two major differences:
 
 ## git commands
 
