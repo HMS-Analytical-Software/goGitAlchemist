@@ -58,7 +58,7 @@ All tests use the standard go test framework: the go test tool and the
 "testing" package from the standard library.
 
 Additionally, they use the Diff function of the 
-[cmp](github.com/google/go-cmp/cmp) package provided by google
+[cmp](https://pkg.go.dev/github.com/google/go-cmp/cmp) package provided by google
 and a custom function to compare error messages (see package [check](../check/)).
 
 Some simple error comparison functions are provided in the 'check' package.
