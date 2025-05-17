@@ -28,13 +28,11 @@ func ErrorString(t errStringTester, err error, want string) {
 	if err == nil {
 		// expected error not detected.
 		t.Fatalf("ERROR: error not detected")
-		return
 	}
 
 	if !strings.Contains(err.Error(), want) {
 		// error message does not match the expectation.
 		t.Fatalf("ERROR: got %s, want %s", err.Error(), want)
-		return
 	}
 
 	// test passed.
