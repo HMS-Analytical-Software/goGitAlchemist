@@ -57,15 +57,13 @@ func TestErrorString(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 
 			t.Run("Error", func(t *testing.T) {
-				defer catchFatalPanic(t)
-				spy := &testerSpy{}
+				spy := &testerSpy{realT: t}
 				check.Error(spy, c.gotErr, c.expectedErr, cmpopts.EquateErrors())
 				examineSpyResults(t, spy, c)
 			})
 
 			t.Run("ErrorString", func(t *testing.T) {
-				defer catchFatalPanic(t)
-				spy := &testerSpy{}
+				spy := &testerSpy{realT: t}
 				check.ErrorString(spy, c.gotErr, c.expectedMsg)
 				examineSpyResults(t, spy, c)
 				if spy.fatal != c.wantErrMsgString {
@@ -73,26 +71,6 @@ func TestErrorString(t *testing.T) {
 				}
 			})
 		})
-	}
-}
-
-// FatalPanic is used to signal a panic that is caused by calling
-// Fatalf. It is used to mimic the behavior of testing.T:
-//
-// Fatalf leads to skipping the remaining code of the test function.
-// By executing a panic and catching it in the test call we can achieve
-// the same behavior.
-//
-// Using runtime.Goexit() would lead to an unrecoverable panic of the go test call.
-type FatalPanic struct{}
-
-// catchFatalPanic catches the panic that is raised in Fatalf.
-func catchFatalPanic(t *testing.T) {
-	if p := recover(); p != nil {
-		if _, ok := p.(FatalPanic); !ok {
-			panic(p) // panic not from Fatalf, rethrow
-		}
-		t.Logf("INFO: Fatalf skips rest of code")
 	}
 }
 
@@ -124,7 +102,10 @@ func examineSpyResults(t *testing.T, spy *testerSpy, c struct {
 }
 
 // testerSpy implements the errStringTester interface.
+// It uses the current testing.T object to Skip the rest of the code
+// after call to Fatalf.
 type testerSpy struct {
+	realT            *testing.T
 	fatal, log, skip string
 	helper           bool
 }
@@ -140,11 +121,10 @@ func (t *testerSpy) Skip(info ...any) {
 }
 
 // Fatalf tracks the message and the arguments.
-// It panics to simulate functionality of testing.T:
-// avoid execution of the steps that follow the call to Fatalf.
 func (t *testerSpy) Fatalf(msg string, args ...any) {
 	t.fatal = fmt.Sprintf(msg, args...)
-	panic(FatalPanic{})
+	// do not execute code following the call to Fatalf.
+	t.realT.SkipNow()
 }
 
 // Logf tracks the message and the arguments.
