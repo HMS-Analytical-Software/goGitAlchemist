@@ -57,13 +57,13 @@ func TestErrorString(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 
 			t.Run("Error", func(t *testing.T) {
-				spy := &testerSpy{}
+				spy := &testerSpy{T: t}
 				check.Error(spy, c.gotErr, c.expectedErr, cmpopts.EquateErrors())
 				examineSpyResults(t, spy, c)
 			})
 
 			t.Run("ErrorString", func(t *testing.T) {
-				spy := &testerSpy{}
+				spy := &testerSpy{T: t}
 				check.ErrorString(spy, c.gotErr, c.expectedMsg)
 				examineSpyResults(t, spy, c)
 				if spy.fatal != c.wantErrMsgString {
@@ -102,7 +102,10 @@ func examineSpyResults(t *testing.T, spy *testerSpy, c struct {
 }
 
 // testerSpy implements the errStringTester interface.
+// It uses the current testing.T object to Skip the rest of the code
+// after call to Fatalf.
 type testerSpy struct {
+	*testing.T
 	fatal, log, skip string
 	helper           bool
 }
@@ -120,6 +123,8 @@ func (t *testerSpy) Skip(info ...any) {
 // Fatalf tracks the message and the arguments.
 func (t *testerSpy) Fatalf(msg string, args ...any) {
 	t.fatal = fmt.Sprintf(msg, args...)
+	// do not execute code following the call to Fatalf.
+	t.SkipNow()
 }
 
 // Logf tracks the message and the arguments.

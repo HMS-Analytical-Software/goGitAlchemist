@@ -28,12 +28,10 @@ func Error(t errStringTester, err, want error, opt ...cmp.Option) {
 	if err == nil {
 		// expected error not detected.
 		t.Fatalf("ERROR: error not detected")
-		return
 	}
 
 	if diff := cmp.Diff(err, want, opt...); diff != "" {
 		t.Fatalf("ERROR: got- want+\n%s\n", diff)
-		return
 	}
 
 	// test passed.
