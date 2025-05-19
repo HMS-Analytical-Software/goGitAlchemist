@@ -168,16 +168,16 @@ and all the files that are used in the definition.
 
 usage of gitalchemist:
   -cfgdir string
-    	base directory for git alchemey recipes (default: $GITALCHEMIST_CFGDIR)
+    	base directory for git alchemy recipes (default: $GITALCHEMIST_CFGDIR)
   -clean
     	remove targetdir
   -maxsteps int
     	execute only number of specified steps
     	0 executes all steps
   -runall
-    	run all recipies
+    	run all recipes
   -targetdir string
-    	base directory for generatet git repos (default: $GITALCHEMIST_TARGETDIR) (default "cwd")
+    	base directory for generated git repos (default: $GITALCHEMIST_TARGETDIR) (default "cwd")
   -test
     	test run, steps are logged but not executed
   -verbose
