@@ -165,15 +165,15 @@ and all the files that are used in the definition.
 		targetDir = defaultCwd
 	}
 	optTargetDir := f.String("targetdir", targetDir,
-		"base directory for generatet git repos (default: $GITALCHEMIST_TARGETDIR)")
+		"base directory for generated git repos (default: $GITALCHEMIST_TARGETDIR)")
 	optCfgDir := f.String("cfgdir", getenv("GITALCHEMIST_CFGDIR"),
-		"base directory for git alchemey recipes (default: $GITALCHEMIST_CFGDIR)")
+		"base directory for git alchemy recipes (default: $GITALCHEMIST_CFGDIR)")
 	optSteps := f.Int("maxsteps", 0, "execute only number of specified steps\n"+
 		"0 executes all steps")
 
 	optVerbose := f.Bool("verbose", false, "verbose messages")
 	optTest := f.Bool("test", false, "test run, steps are logged but not executed")
-	optRunAll := f.Bool("runall", false, "run all recipies")
+	optRunAll := f.Bool("runall", false, "run all recipes")
 	optClean := f.Bool("clean", false, "remove targetdir")
 	optVersion := f.Bool("version", false, "show version")
 
