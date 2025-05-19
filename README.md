@@ -267,8 +267,8 @@ Go GitAlchemist does not use a timestamp directory. Each created git repo
 is placed within the target directory, by default "./cwd", in a directory
 that corresponds to the Title definition in the gitalchemist file.
 
-This implies that the created directories must be cleaned up befor a rerun.
+This implies that the created directories must be cleaned up before a rerun.
 It avoids cluttering the directory space.
 
-To remove all temporary created git repos, use the -clean command line switch.
+To remove all temporary git repos, use the -clean command line switch.
 
