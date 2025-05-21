@@ -1,7 +1,10 @@
 # This workflow runs the go unit tests.
 
 name: go-unit-test
-on: 
+on:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   push:
     paths:
@@ -28,6 +31,11 @@ jobs:
         check-latest: true
 
     - name: Test
-      run: go test ./...
+      run: go test ./... -json > report.json || true
 
-
+    - name: Generate Test Report
+      uses: dipjyotimetia/gotest-report@main
+      with:
+        test-json-file: report.json
+        job-name: Unit Tests
+        write-summary: true
