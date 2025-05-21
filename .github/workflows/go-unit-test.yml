@@ -11,8 +11,9 @@ on:
       - '**.go'
 
 permissions:
-  pull-requests: write
   contents: read
+  actions: read
+  checks: write
 
 jobs:
   unit-tests:
@@ -35,10 +36,10 @@ jobs:
         check-latest: true
 
     - name: Test
-      run: go test ./... -json > report.json || true
+      run: go test ./... -json > report.json
 
-    - name: Generate Test Report
-      uses: dipjyotimetia/gotest-report@main
+    - name: Publish Test Results
+      uses: dorny/test-reporter@main
       with:
-        test-json-file: report.json
-        job-name: Report (${{ matrix.os }})
+        name: Test Results (${{ matrix.os }})
+        path: report.json
