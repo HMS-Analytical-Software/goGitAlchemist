@@ -41,5 +41,4 @@ jobs:
       uses: dipjyotimetia/gotest-report@main
       with:
         test-json-file: report.json
-        job-name: Unit Tests
-        write-summary: true
+        job-name: Report (${{ matrix.os }})
