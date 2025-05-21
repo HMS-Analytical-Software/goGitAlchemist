@@ -10,6 +10,10 @@ on:
     paths:
       - '**.go'
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   unit-tests:
     name: run unit tests
