@@ -43,3 +43,4 @@ jobs:
       with:
         name: Test Results (${{ matrix.os }})
         path: report.json
+        reporter: golang-json
