@@ -1,4 +1,4 @@
-module github.com/HMS-Analytical-Software/czemmel-goGitAlchemist
+module github.com/HMS-Analytical-Software/goGitAlchemist
 
 go 1.24.0
 

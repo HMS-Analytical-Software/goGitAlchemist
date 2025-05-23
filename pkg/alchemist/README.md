@@ -204,7 +204,7 @@ Example: run all unit tests
     go test
     ok
     PASS
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist 0.023s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist 0.023s
 
 Example: run a specific subtest in verbose mode:
 
@@ -216,7 +216,7 @@ Example: run a specific subtest in verbose mode:
     --- PASS: TestListBookContent (0.00s)
         --- SKIP: TestListBookContent/dir_not_found (0.00s)
     PASS
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist 0.003s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist 0.003s
 
 
 ## test coverage
@@ -227,58 +227,58 @@ Example: examine code coverage
 	ok
 	PASS
 	coverage: 98.2% of statements
-	ok  	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist	0.027s
+	ok  	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist	0.027s
 	go tool cover -func=cover.txt
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:25:			newAdept	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:34:			git		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:56:			makedir		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:68:			copy		85.7%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:115:			copyFile	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:166:			examine		94.4%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/adept.go:204:			examineTarget	90.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/book.go:16:			ListPages	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/book.go:39:			ListBookContent	90.9%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:9:			Error		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:19:			Error		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:31:			Error		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:36:			Unwrap		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:51:			Error		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:67:			Unwrap		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:81:			Error		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/error.go:86:			Unwrap		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/formula.go:20:			Transmute	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/formula.go:74:			UnmarshalYAML	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/formula.go:132:			unmarshalCaster	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/formula.go:145:			Read		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/formula.go:157:			readFormula	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/laboratory.go:26:		getAuthor	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/logger.go:12:			debug		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/logger.go:24:			info		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/novice.go:18:			newNovice	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/novice.go:29:			git		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/novice.go:36:			copy		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/novice.go:43:			makedir		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spelladd.go:11:			validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spelladd.go:19:			cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcommit.go:12:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcommit.go:25:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcreateaddcommit.go:19:	validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcreateaddcommit.go:48:	cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcreatefile.go:14:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellcreatefile.go:25:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellgit.go:14:			validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellgit.go:22:			cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellgit.go:38:			splitArgs	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellinitrepo.go:15:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellinitrepo.go:26:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellmerge.go:16:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellmerge.go:27:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellmove.go:14:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellmove.go:25:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellpush.go:11:		validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellpush.go:16:		cast		100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellremoveandcommit.go:17:	validate	100.0%
-	github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/spellremoveandcommit.go:32:	cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:25:			newAdept	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:34:			git		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:56:			makedir		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:68:			copy		85.7%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:115:			copyFile	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:166:			examine		94.4%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/adept.go:204:			examineTarget	90.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/book.go:16:			ListPages	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/book.go:39:			ListBookContent	90.9%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:9:			Error		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:19:			Error		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:31:			Error		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:36:			Unwrap		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:51:			Error		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:67:			Unwrap		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:81:			Error		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/error.go:86:			Unwrap		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/formula.go:20:			Transmute	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/formula.go:74:			UnmarshalYAML	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/formula.go:132:			unmarshalCaster	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/formula.go:145:			Read		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/formula.go:157:			readFormula	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/laboratory.go:26:		getAuthor	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/logger.go:12:			debug		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/logger.go:24:			info		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/novice.go:18:			newNovice	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/novice.go:29:			git		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/novice.go:36:			copy		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/novice.go:43:			makedir		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spelladd.go:11:			validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spelladd.go:19:			cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcommit.go:12:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcommit.go:25:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcreateaddcommit.go:19:	validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcreateaddcommit.go:48:	cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcreatefile.go:14:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellcreatefile.go:25:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellgit.go:14:			validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellgit.go:22:			cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellgit.go:38:			splitArgs	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellinitrepo.go:15:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellinitrepo.go:26:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellmerge.go:16:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellmerge.go:27:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellmove.go:14:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellmove.go:25:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellpush.go:11:		validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellpush.go:16:		cast		100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellremoveandcommit.go:17:	validate	100.0%
+	github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/spellremoveandcommit.go:32:	cast		100.0%
 	total:													(statements)	98.2%
 	go tool cover -html=cover.txt -o cover.html
 	echo "chromium-browser cover.html &"
@@ -347,10 +347,10 @@ Example:
     --- PASS: TestDockerAdeptFileCopy (0.00s)
         --- SKIP: TestDockerAdeptFileCopy/copy_target_not_writeable (0.00s)
     PASS
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist 0.004s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist 0.004s
     --- PASS: TestStartDocker (8.70s)
     PASS
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist 8.702s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist 8.702s
 
 To examine the conainer, just execute the docker exec command that is displayed
 in the test output:

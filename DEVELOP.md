@@ -131,9 +131,9 @@ or acceptance tests.
     go vet -lostcancel=false ./...
     golangci-lint run
     go test ./...
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/cmd/gitalchemist      0.003s
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist 0.021s
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/check     0.003s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/cmd/gitalchemist      0.003s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist 0.021s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/pkg/check     0.003s
 
 # github workflows
 
@@ -195,19 +195,19 @@ If you append "?m=all" to the url, also unexported elements are shown.
 
 ## Example: start page
 
-http://localhost:6060/pkg/github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/
+http://localhost:6060/pkg/github.com/HMS-Analytical-Software/goGitAlchemist/
 
 ![doc/images/example\_godoc\_mainpage.png](doc/images/example_godoc_mainpage.png)
 
 ## Example: exported only
 
-http://localhost:6060/pkg/github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/
+http://localhost:6060/pkg/github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/
 
 ![doc/images/example\_godoc\_exported.png](doc/images/example_godoc_exported.png)
 
 ## Example: with unexported
 
-http://localhost:6060/pkg/github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist/?m=all
+http://localhost:6060/pkg/github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist/?m=all
 
 ![doc/images/example\_godoc\_unexported.png](doc/images/example_godoc_unexported.png)
 
@@ -230,8 +230,8 @@ The information can be displayed by calling go version.
 
     cmd/gitalchemist> go version -m gitalchemist
     gitalchemist: go1.24.0
-            path    github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/cmd/gitalchemist
-            mod     github.com/HMS-Analytical-Software/czemmel-goGitAlchemist       v0.1.3-0.20250301162826-66028cd15f55
+            path    github.com/HMS-Analytical-Software/goGitAlchemist/cmd/gitalchemist
+            mod     github.com/HMS-Analytical-Software/goGitAlchemist       v0.1.3-0.20250301162826-66028cd15f55
             dep     gopkg.in/yaml.v3        v3.0.1  h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
             build   -buildmode=exe
             build   -compiler=gc
@@ -275,7 +275,7 @@ Example:
 
 Example:
 
-    module github.com/HMS-Analytical-Software/czemmel-goGitAlchemist
+    module github.com/HMS-Analytical-Software/goGitAlchemist
 
     go 1.24.0
 

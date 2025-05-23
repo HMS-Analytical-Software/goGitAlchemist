@@ -10,7 +10,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/alchemist"
+	"github.com/HMS-Analytical-Software/goGitAlchemist/pkg/alchemist"
 )
 
 func main() {

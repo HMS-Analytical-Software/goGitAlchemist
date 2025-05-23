@@ -40,5 +40,5 @@ lint:
 # browser
 docserver:
 	godoc &
-	xdg-open http://localhost:6060/pkg/github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/
+	xdg-open http://localhost:6060/pkg/github.com/HMS-Analytical-Software/goGitAlchemist/
 
