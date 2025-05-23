@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/pkg/check"
+	"github.com/HMS-Analytical-Software/goGitAlchemist/pkg/check"
 	"github.com/google/go-cmp/cmp"
 )
 
