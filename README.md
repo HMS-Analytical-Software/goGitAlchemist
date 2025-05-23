@@ -183,7 +183,7 @@ cmd/gitalchemist> ./gitalchemist -verbose -cfgdir testdata basic_workflow
 2025/02/23 10:37:16 [DEBUG] makedir "cwd/remotes/basic_workflow"
 2025/02/23 10:37:16 [INFO] 1/4: init --bare --initial-branch=main .
 2025/02/23 10:37:16 [DEBUG] "cwd/remotes/basic_workflow": git []string{"init", "--bare", "--initial-branch=main", "."}
-2025/02/23 10:37:16 [DEBUG] Initialized empty Git repository in /home/jochen/work/hms/czemmel-goGitAlchemist/cmd/gitalchemist/cwd/remotes/basic_workflow/
+2025/02/23 10:37:16 [DEBUG] Initialized empty Git repository in /home/jochen/work/hms/goGitAlchemist/cmd/gitalchemist/cwd/remotes/basic_workflow/
 2025/02/23 10:37:16 [INFO] 1/4: clone remotes/basic_workflow basic_workflow
 2025/02/23 10:37:16 [DEBUG] "cwd": git []string{"clone", "remotes/basic_workflow", "basic_workflow"}
 2025/02/23 10:37:16 [DEBUG] Cloning into 'basic_workflow'...

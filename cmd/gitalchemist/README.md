@@ -88,7 +88,7 @@ Example: run test for default TASK "basic\_workflow" in verbose mode:
     --- PASS: TestAcceptance (0.16s)
         --- PASS: TestAcceptance/basic_workflow (0.04s)
     PASS
-    ok      github.com/HMS-Analytical-Software/czemmel-goGitAlchemist/cmd/gitalchemist      0.158s
+    ok      github.com/HMS-Analytical-Software/goGitAlchemist/cmd/gitalchemist      0.158s
 
 # acceptance tests in github
 
