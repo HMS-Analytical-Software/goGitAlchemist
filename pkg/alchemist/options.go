@@ -10,8 +10,9 @@ type Options struct {
 	ExecuteSpells int    // execute only the first # steps
 
 	// set during processing
-	taskName       string // name of the task to execute
-	cloneTo        string // directory of the repository clone
-	numberOfSpells int    // number of steps
-	currentSpell   int    // number of the current step (1-based)
+	taskName       string   // name of the task to execute
+	cloneTo        string   // directory of the repository clone
+	numberOfSpells int      // number of steps
+	currentSpell   int      // number of the current step (1-based)
+	includePath    []string // stack of included formula paths for circular detection
 }

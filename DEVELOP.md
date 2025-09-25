@@ -300,3 +300,39 @@ Example:
 
 The package gopkg.in/check.v1 is a dependency of the yaml package.
 
+# AI Development
+
+A new feature 'include' was implemented by GitHub copilot in vs code using
+Claude Sonnet 4.
+
+It uses the following files:
+
+## global
+
+* .github/copilot-instructions.md: general instructions for all chats
+
+## research
+
+* research_codebase.md: contains general instructions to analyze the codebase
+* research-2025-09-25-gitalchemist-codebase-analysis.md: the result of the analysis
+* chat_20250925-1.md: the corresponding chat
+
+## plan
+
+Before creating a plan, a new chat was opened. The result of the research 
+step is used here.
+
+* create_plan.md: contains general instructions to create a plan for an implementation
+* plan-2025-09-25-include-spell-feature.md: the resulting plan
+* chat_20250925-2.md: the corresponding chat
+
+## implement
+
+Before implmenting a plan, a new chat was opened. The result of the plan 
+step is used here.
+
+* implement_plan.md: contains the general instructions for implementing a plan
+* chat_20250925-3.md: the corresponding chat
+* chat_20250925-raw-3.txt: the raw chat copied from vs code (because the md chat had been incomplete on the first try)
+
+

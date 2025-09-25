@@ -1,0 +1,23 @@
+title: test_include
+commands:
+  - init_bare_repo:
+      bare: remotes/test_include
+      clone_to: test_include
+  - create_file:
+      source: files/main.md
+      target: main.md
+  - add:
+      files: [main.md]
+  - commit:
+      message: Main formula commit
+      author: red
+  - include:
+      path: ../shared_workflow/gitalchemist.yaml
+  - create_file:
+      source: files/final.md
+      target: final.md
+  - add:
+      files: [final.md]
+  - commit:
+      message: Final commit after include
+      author: red

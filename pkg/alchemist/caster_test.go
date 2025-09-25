@@ -138,6 +138,13 @@ func TestCasterValidate(t *testing.T) {
 		name:    "removeAndCommitSpell author missing",
 		spell:   removeAndCommitSpell{Files: []string{"x"}, Message: "y"},
 		wantErr: MissingValueError("author"),
+	}, {
+		name:  "includeSpell ok",
+		spell: includeSpell{Path: "../shared/common.yaml"},
+	}, {
+		name:    "includeSpell path missing",
+		spell:   includeSpell{},
+		wantErr: MissingValueError("path"),
 	}}
 
 	for _, c := range testCases {

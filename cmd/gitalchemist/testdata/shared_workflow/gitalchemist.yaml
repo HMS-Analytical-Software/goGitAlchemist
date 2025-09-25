@@ -1,0 +1,14 @@
+title: shared_workflow
+commands:
+  # This init should be ignored when included
+  - init_bare_repo:
+      bare: remotes/shared_workflow
+      clone_to: shared_workflow
+  - create_file:
+      source: files/shared.md
+      target: shared.md
+  - add:
+      files: [shared.md]
+  - commit:
+      message: Added shared file
+      author: blue

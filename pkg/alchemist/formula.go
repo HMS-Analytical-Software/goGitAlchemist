@@ -28,6 +28,7 @@ func Transmute(f Formula, opt Options, logger *log.Logger) error {
 	opt.cloneTo = f.Commands.cloneTo
 	opt.taskName = f.Title
 	opt.numberOfSpells = len(f.Commands.spells)
+	opt.includePath = []string{} // Initialize include path tracking
 
 	for i, spell := range f.Commands.spells {
 		if opt.ExecuteSpells > 0 && opt.ExecuteSpells == i {
@@ -62,6 +63,7 @@ const (
 	symbolPush            = "push"
 	symbolMove            = "mv"
 	symbolRemoveCommit    = "remove_and_commit"
+	symbolInclude         = "include"
 )
 
 // yaml doku
@@ -107,6 +109,8 @@ func (c *symbols) UnmarshalYAML(value *yaml.Node) (err error) {
 			spell, err = unmarshalCaster[moveSpell](contentNode)
 		case symbolRemoveCommit:
 			spell, err = unmarshalCaster[removeAndCommitSpell](contentNode)
+		case symbolInclude:
+			spell, err = unmarshalCaster[includeSpell](contentNode)
 		default:
 			return fmt.Errorf("unkonwn command %q", cmd)
 		}

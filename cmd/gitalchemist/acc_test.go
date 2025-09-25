@@ -247,6 +247,30 @@ var testCases = []accTestCase{
 		}},
 	},
 	{
+		name: "test_include",
+		compareList: []filePara{{
+			from: filepath.Join("files", "main.md"),
+			to:   "main.md",
+		}, {
+			from: filepath.Join("..", "shared_workflow", "files", "shared.md"),
+			to:   "shared.md",
+		}, {
+			from: filepath.Join("files", "final.md"),
+			to:   "final.md",
+		}},
+		gitList: []gitPara{{
+			// Check that we have commits from both formulas
+			args: []string{"log", "--pretty=format:%s"},
+			want: "Final commit after include\n" +
+				"Added shared file\n" +
+				"Main formula commit",
+		}, {
+			// Check that all three files are in the repository
+			args: []string{"ls-files"},
+			want: "final.md\nmain.md\nshared.md\n",
+		}},
+	},
+	{
 		name:    "error case this does not exist",
 		wantErr: "exit status 6",
 	},
